@@ -43,6 +43,7 @@ h1 {
 }
 
 .form-control:focus {
+  outline: none !important;
   border-color: #007bffb3;
   box-shadow: 0 2px 8px #007bff54;
 }
