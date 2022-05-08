@@ -21,3 +21,7 @@ nav a:hover {
 nav a.active {
   background-color: black;
 }
+
+nav .heroes-route {
+  margin-left: 5px;
+}
