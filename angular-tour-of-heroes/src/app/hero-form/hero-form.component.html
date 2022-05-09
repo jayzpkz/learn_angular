@@ -2,18 +2,21 @@
   <h1>Hero Form</h1>
   <form #heroForm="ngForm">
     <div class="form-group">
-      <label class="form-control-label" for="name">Name</label>
-      <input class="form-control" id="name" type="text" required [(ngModel)]="model.name" name="name" />
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+    </div>
 
-      <label class="form-control-label" for="alter-ego">Alter Ego</label>
-      <input class="form-control" id="alter-ego" type="text" required [(ngModel)]="model.alterEgo" name="alter-ego" />
+    <div class="form-group">
+      <label for="alterEgo">Alter Ego</label>
+      <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+    </div>
 
-      <label class="form-control-label" for="power">Hero Power</label>
-      <select class="form-control" id="power" required>
+    <div class="form-group">
+      <label for="power">Hero Power</label>
+      <select class="form-control" id="power" required [(ngModel)]="model.power" name="power">
         <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
       </select>
-
-      <button type="button" (click)="goBack()">go back</button>
     </div>
+    <button type="button" (click)="goBack()">go back</button>
   </form>
 </div>
