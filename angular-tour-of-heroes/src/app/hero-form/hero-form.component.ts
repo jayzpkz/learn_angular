@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
 import { Hero } from '../hero';
@@ -15,14 +15,25 @@ export class HeroFormComponent {
 
   model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
 
-  submitted = false;
+  public submitted = false;
 
   constructor(private location: Location) { }
 
-  onSubmit() { this.submitted = true; }
+  onSubmit() {
+    this.submitted = true;
+    console.log("submitted", this.submitted);
+  }
+
+  onEdit() {
+    this.submitted = false;
+    console.log("edit", this.submitted);
+  }
+
+  newHero() {
+    this.model = new Hero(42, '', '');
+  }
 
   goBack(): void {
     this.location.back();
   }
-
 }
